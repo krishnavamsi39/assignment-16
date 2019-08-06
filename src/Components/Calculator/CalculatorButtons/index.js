@@ -4,10 +4,16 @@ import EachButton from "./EachButton";
 import { Div } from "./styledComponents";
 class CalculatorButtons extends Component {
   handleClick = value => {
-    if (value === "Del") this.props.calculatorStore.deleteCharacter();
-    else if (value === "c") this.props.calculatorStore.clearTheInput();
-    else if (value === "=") this.props.calculatorStore.toggleShowOutput();
-    else this.props.calculatorStore.addCharacterToExpression(value);
+    const { calculatorStore } = this.props;
+    if (value === "Del") {
+      calculatorStore.deleteCharacter();
+    } else if (value === "c") {
+      calculatorStore.clearTheInput();
+    } else if (value === "=") {
+      calculatorStore.toggleShowOutput();
+    } else {
+      calculatorStore.addCharacterToExpression(value);
+    }
   };
 
   render() {

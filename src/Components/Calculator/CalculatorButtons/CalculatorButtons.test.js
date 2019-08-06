@@ -37,12 +37,12 @@ describe("Test for CalculatorButtons Component", () => {
   });
   it("should check if evaluate expression is called", () => {
     const calculatorStore = new CalculatorStore();
-    jest.spyOn(calculatorStore, "evaluateExpression");
+    jest.spyOn(calculatorStore, "toggleShowOutput");
     const { getByText } = render(
       <CalculatorButtons calculatorStore={calculatorStore} />
     );
     const clear = getByText("=");
     fireEvent.click(clear);
-    expect(calculatorStore.evaluateExpression).toBeCalled();
+    expect(calculatorStore.toggleShowOutput).toBeCalled();
   });
 });

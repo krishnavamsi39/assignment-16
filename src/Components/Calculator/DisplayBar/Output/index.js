@@ -4,11 +4,12 @@ import { Span } from "./styledComponents";
 @observer
 class Output extends Component {
   render() {
+    const { calculatorStore } = this.props;
     return (
       <>
-        {this.props.calculatorStore.showOutput ? (
-          <Span value={this.props.calculatorStore.evaluateExpression()}>
-            {this.props.calculatorStore.evaluateExpression()}
+        {calculatorStore.showOutput ? (
+          <Span value={calculatorStore.evaluateExpression()}>
+            {calculatorStore.evaluateExpression()}
           </Span>
         ) : (
           <></>
