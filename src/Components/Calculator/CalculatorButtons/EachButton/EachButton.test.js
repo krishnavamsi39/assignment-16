@@ -1,4 +1,4 @@
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import React from "react";
 import EachButton from "./index";
 describe("Test for EachButton Component", () => {
@@ -8,6 +8,6 @@ describe("Test for EachButton Component", () => {
     const { getByText } = render(<EachButton funtion={mockFunction} />);
     const add = getByText("+");
     fireEvent.click(add);
-    expect(mockFunction).toHaveBeenCalledWith("+");
+    expect(mockFunction).toBeCalledWith("+");
   });
 });

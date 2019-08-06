@@ -22,12 +22,12 @@ class CalculatorStore {
       return false;
     }
   }
-  @computed get evaluateExpression() {
+  evaluateExpression = () => {
     if (this.isValidExpression) {
       return eval(this.expressionToBeEvaluated);
     } else {
       return "Malformed expression";
     }
-  }
+  };
 }
 export default CalculatorStore;
