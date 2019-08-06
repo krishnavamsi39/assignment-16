@@ -38,5 +38,14 @@ describe("tests for Calculator Store", () => {
   });
   it("should evaluate the expression", () => {
     expect(calculatorStore.evaluateExpression).toBe(15);
+    calculatorStore.clearTheInput();
+    calculatorStore.addCharacterToExpression("5");
+    calculatorStore.addCharacterToExpression("*");
+    calculatorStore.addCharacterToExpression("5");
+    calculatorStore.addCharacterToExpression("+");
+    calculatorStore.addCharacterToExpression("5");
+    expect(calculatorStore.evaluateExpression).toBe(30);
+    calculatorStore.addCharacterToExpression("+");
+    expect(calculatorStore.evaluateExpression).toBe("Malformed expression");
   });
 });
