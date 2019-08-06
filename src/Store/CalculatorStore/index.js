@@ -7,6 +7,8 @@ class CalculatorStore {
     this.expressionToBeEvaluated += character;
   }
   @action
-  clearTheInput() {}
+  clearTheInput() {
+    this.expressionToBeEvaluated = "";
+  }
 }
 export default CalculatorStore;
