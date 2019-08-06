@@ -22,5 +22,6 @@ class CalculatorStore {
       return false;
     }
   }
+  @computed get evaluateExpression() {}
 }
 export default CalculatorStore;
