@@ -7,7 +7,10 @@ describe("test for input expression component", () => {
     const calculatorStore = new CalculatorStore();
     calculatorStore.addCharacterToExpression("*");
     calculatorStore.addCharacterToExpression("-");
-    const { getByTestId } = render(<InputExpression />);
+    const { getByTestId } = render(
+      <InputExpression calculatorStore={calculatorStore} />
+    );
     const input = getByTestId("expression");
+    expect(calculatorStore.expressionToBeEvaluated).toBe("*-");
   });
 });
