@@ -37,6 +37,6 @@ describe("tests for Calculator Store", () => {
     expect(calculatorStore.isValidExpression).toBe(true);
   });
   it("should evaluate the expression", () => {
-    expect(calculatorStore.evaluateExpression).toBe("15");
+    expect(calculatorStore.evaluateExpression).toBe(15);
   });
 });
