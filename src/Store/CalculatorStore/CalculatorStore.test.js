@@ -30,11 +30,9 @@ describe("tests for Calculator Store", () => {
     expect(calculatorStore.isValidExpression).toBe(false);
     calculatorStore.clearTheInput();
     calculatorStore.addCharacterToExpression("5");
-
     calculatorStore.addCharacterToExpression("*");
     calculatorStore.addCharacterToExpression("5");
     calculatorStore.addCharacterToExpression("+");
-
     calculatorStore.addCharacterToExpression("5");
     expect(calculatorStore.isValidExpression).toBe(true);
   });
