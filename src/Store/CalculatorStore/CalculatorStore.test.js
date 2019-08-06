@@ -24,4 +24,7 @@ describe("tests for Calculator Store", () => {
     calculatorStore.deleteCharacter();
     expect(calculatorStore.expressionToBeEvaluated).toBe("");
   });
+  it("should check if expression is valid", () => {
+    expect(calculatorStore.isValidExpression).toBe(true);
+  });
 });

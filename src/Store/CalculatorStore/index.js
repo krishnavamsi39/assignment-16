@@ -1,4 +1,4 @@
-import { observable, action } from "mobx";
+import { observable, action, computed } from "mobx";
 class CalculatorStore {
   @observable expressionToBeEvaluated = "";
 
@@ -14,5 +14,6 @@ class CalculatorStore {
   deleteCharacter() {
     this.expressionToBeEvaluated = this.expressionToBeEvaluated.slice(0, -1);
   }
+  @computed get isValidExpression() {}
 }
 export default CalculatorStore;
