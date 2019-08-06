@@ -5,7 +5,9 @@ describe("Test for EachButton Component", () => {
   it("should test if function is called ", () => {
     const mockFunction = jest.fn();
 
-    const { getByText } = render(<EachButton funtion={mockFunction} />);
+    const { getByText } = render(
+      <EachButton value={"+"} function={mockFunction} />
+    );
     const add = getByText("+");
     fireEvent.click(add);
     expect(mockFunction).toBeCalledWith("+");

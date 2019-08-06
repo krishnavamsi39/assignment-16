@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 class EachButton extends Component {
   handleClick = e => {
-    this.props.funtion(e.target.value);
+    this.props.function(e.target.value);
   };
   render() {
     return (
       <>
-        <button value="+" data-id="each-button" onClick={this.handleClick}>
-          +
+        <button value={this.props.value} onClick={this.handleClick}>
+          {this.props.value}
         </button>
       </>
     );
