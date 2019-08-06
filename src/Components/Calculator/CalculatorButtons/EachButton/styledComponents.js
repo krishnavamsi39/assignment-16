@@ -13,47 +13,16 @@ export const Button = styled.button`
     css`
       width: 105px;
     `}
-  ${props =>
-    props.value === "/" &&
-    css`
-      background-color: #e48800;
-    `}
     ${props =>
-      props.value === "+" &&
+      ["/", "+", "-", "*", "="].includes(props.value) &&
       css`
         background-color: #e48800;
       `}
-     ${props =>
-       props.value === "-" &&
-       css`
-         background-color: #e48800;
-       `}
-        ${props =>
-          props.value === "*" &&
-          css`
-            background-color: #e48800;
-          `}
-        ${props =>
-          props.value === "=" &&
-          css`
-            background-color: #e48800;
-          `}
-          ${props =>
-            props.value === "c" &&
-            css`
-              background-color: #9e9e9e;
-              color: black;
-            `}
-            ${props =>
-              props.value === "%" &&
-              css`
-                background-color: #9e9e9e;
-                color: black;
-              `}
-                ${props =>
-                  props.value === "Del" &&
-                  css`
-                    background-color: #9e9e9e;
-                    color: black;
-                  `}
+      ${props =>
+        ["c", "%", "Del"].includes(props.value) &&
+        css`
+          background-color: #9e9e9e;
+          color: black;
+        `}
+  
 `;
