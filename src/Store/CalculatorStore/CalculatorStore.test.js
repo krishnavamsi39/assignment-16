@@ -26,5 +26,16 @@ describe("tests for Calculator Store", () => {
   });
   it("should check if expression is valid", () => {
     expect(calculatorStore.isValidExpression).toBe(true);
+    calculatorStore.deleteCharacter();
+    expect(calculatorStore.isValidExpression).toBe(false);
+    calculatorStore.clearTheInput();
+    calculatorStore.addCharacterToExpression("5");
+
+    calculatorStore.addCharacterToExpression("*");
+    calculatorStore.addCharacterToExpression("5");
+    calculatorStore.addCharacterToExpression("+");
+
+    calculatorStore.addCharacterToExpression("5");
+    expect(calculatorStore.isValidExpression).toBe(true);
   });
 });
