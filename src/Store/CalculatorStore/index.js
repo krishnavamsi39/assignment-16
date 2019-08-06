@@ -10,5 +10,7 @@ class CalculatorStore {
   clearTheInput() {
     this.expressionToBeEvaluated = "";
   }
+  @action
+  deleteCharacter() {}
 }
 export default CalculatorStore;
