@@ -1,11 +1,11 @@
 import React from "react";
-import CalculatorButtons from "./Components/Calculator/CalculatorButtons";
+import Calculator from "./Components/Calculator";
 import CalculatorStore from "./Store/CalculatorStore";
 const calculatorStore = new CalculatorStore();
 function App() {
   return (
     <div>
-      <CalculatorButtons calculatorStore={calculatorStore} />
+      <Calculator calculatorStore={calculatorStore} />
     </div>
   );
 }

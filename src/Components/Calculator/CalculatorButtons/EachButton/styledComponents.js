@@ -11,7 +11,7 @@ export const Button = styled.button`
   ${props =>
     props.value === "0" &&
     css`
-      width: 100px;
+      width: 105px;
     `}
   ${props =>
     props.value === "/" &&

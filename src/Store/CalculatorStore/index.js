@@ -1,10 +1,17 @@
 import { observable, action, computed } from "mobx";
 class CalculatorStore {
   @observable expressionToBeEvaluated = "";
-
+  @observable showOutput = false;
   @action
   addCharacterToExpression(character) {
+    if (this.showOutput === true) {
+      this.expressionToBeEvaluated = "";
+    }
+    this.showOutput = false;
     this.expressionToBeEvaluated += character;
+  }
+  @action toggleShowOutput() {
+    this.showOutput = true;
   }
   @action
   clearTheInput() {
@@ -12,6 +19,7 @@ class CalculatorStore {
   }
   @action
   deleteCharacter() {
+    this.showOutput = false;
     this.expressionToBeEvaluated = this.expressionToBeEvaluated.slice(0, -1);
   }
   @computed get isValidExpression() {

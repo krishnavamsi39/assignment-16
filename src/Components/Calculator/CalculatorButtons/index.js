@@ -6,7 +6,7 @@ class CalculatorButtons extends Component {
   handleClick = value => {
     if (value === "Del") this.props.calculatorStore.deleteCharacter();
     else if (value === "c") this.props.calculatorStore.clearTheInput();
-    else if (value === "=") this.props.calculatorStore.evaluateExpression();
+    else if (value === "=") this.props.calculatorStore.toggleShowOutput();
     else this.props.calculatorStore.addCharacterToExpression(value);
   };
 
