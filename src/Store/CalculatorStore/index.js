@@ -11,6 +11,8 @@ class CalculatorStore {
     this.expressionToBeEvaluated = "";
   }
   @action
-  deleteCharacter() {}
+  deleteCharacter() {
+    this.expressionToBeEvaluated = this.expressionToBeEvaluated.slice(0, -1);
+  }
 }
 export default CalculatorStore;
