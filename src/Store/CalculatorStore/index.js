@@ -3,8 +3,9 @@ class CalculatorStore{
     @observable expressionToBeEvaluated=""
 
     @action
-    addCharacterToExpression(){
-        
+    addCharacterToExpression(character){
+        this.expressionToBeEvaluated+=character
+
     }
 
 
