@@ -25,4 +25,24 @@ describe("Test for CalculatorButtons Component", () => {
     fireEvent.click(deletechar);
     expect(calculatorStore.deleteCharacter).toBeCalled();
   });
+  it("should check if clear funtion is called", () => {
+    const calculatorStore = new CalculatorStore();
+    jest.spyOn(calculatorStore, "clearTheInput");
+    const { getByText } = render(
+      <CalculatorButtons calculatorStore={calculatorStore} />
+    );
+    const clear = getByText("c");
+    fireEvent.click(clear);
+    expect(calculatorStore.clearTheInput).toBeCalled();
+  });
+  it("should check if evaluate expression is called", () => {
+    const calculatorStore = new CalculatorStore();
+    jest.spyOn(calculatorStore, "evaluateExpression");
+    const { getByText } = render(
+      <CalculatorButtons calculatorStore={calculatorStore} />
+    );
+    const clear = getByText("=");
+    fireEvent.click(clear);
+    expect(calculatorStore.evaluateExpression).toBeCalled();
+  });
 });

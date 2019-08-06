@@ -4,6 +4,8 @@ import EachButton from "./EachButton";
 class CalculatorButtons extends Component {
   handleClick = value => {
     if (value === "Del") this.props.calculatorStore.deleteCharacter();
+    else if (value === "c") this.props.calculatorStore.clearTheInput();
+    else if (value === "=") this.props.calculatorStore.evaluateExpression();
     else this.props.calculatorStore.addCharacterToExpression(value);
   };
 
@@ -11,7 +13,13 @@ class CalculatorButtons extends Component {
     return (
       <>
         {BUTTONS.map(button => {
-          return <EachButton value={button} function={this.handleClick} />;
+          return (
+            <EachButton
+              value={button}
+              key={button}
+              function={this.handleClick}
+            />
+          );
         })}
       </>
     );
