@@ -14,6 +14,13 @@ class CalculatorStore {
   deleteCharacter() {
     this.expressionToBeEvaluated = this.expressionToBeEvaluated.slice(0, -1);
   }
-  @computed get isValidExpression() {}
+  @computed get isValidExpression() {
+    try {
+      eval(this.expressionToBeEvaluated);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
 }
 export default CalculatorStore;
