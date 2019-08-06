@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BUTTONS from "../../../Constants/CalculatorButtons";
 import EachButton from "./EachButton";
+import { Div } from "./styledComponents";
 class CalculatorButtons extends Component {
   handleClick = value => {
     if (value === "Del") this.props.calculatorStore.deleteCharacter();
@@ -11,7 +12,7 @@ class CalculatorButtons extends Component {
 
   render() {
     return (
-      <>
+      <Div>
         {BUTTONS.map(button => {
           return (
             <EachButton
@@ -21,7 +22,7 @@ class CalculatorButtons extends Component {
             />
           );
         })}
-      </>
+      </Div>
     );
   }
 }

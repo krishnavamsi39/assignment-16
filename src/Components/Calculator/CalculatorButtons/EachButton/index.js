@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "./styledComponents";
 class EachButton extends Component {
   handleClick = e => {
     this.props.function(e.target.value);
@@ -6,9 +7,9 @@ class EachButton extends Component {
   render() {
     return (
       <>
-        <button value={this.props.value} onClick={this.handleClick}>
+        <Button value={this.props.value} onClick={this.handleClick}>
           {this.props.value}
-        </button>
+        </Button>
       </>
     );
   }
